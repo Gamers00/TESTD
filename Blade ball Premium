@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome";
+    Title = "Premium Version!";
     Text = "Script Made by Gamers!";
     Icon = "rbxassetid://12325317906";
 })
@@ -122,86 +122,8 @@ end
 end)
 
 KillingCheats:CreateButton("AutoParry", function()
-local function startAutoParry()
-    local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local replicatedStorage = game:GetService("ReplicatedStorage")
-    local runService = game:GetService("RunService")
-    local parryButtonPress = replicatedStorage.Remotes.ParryButtonPress
-    local ballsFolder = workspace:WaitForChild("Balls")
- 
-    print("Script successfully ran.")
- 
-    local function onCharacterAdded(newCharacter)
-        character = newCharacter
-    end
- 
-    player.CharacterAdded:Connect(onCharacterAdded)
- 
-    local focusedBall = nil  
- 
-    local function chooseNewFocusedBall()
-        local balls = ballsFolder:GetChildren()
-        focusedBall = nil
-        for _, ball in ipairs(balls) do
-            if ball:GetAttribute("realBall") == true then
-                focusedBall = ball
-                break
-            end
-        end
-    end
- 
-    chooseNewFocusedBall()
- 
-    local function timeUntilImpact(ballVelocity, distanceToPlayer, playerVelocity)
-        local directionToPlayer = (character.HumanoidRootPart.Position - focusedBall.Position).Unit
-        local velocityTowardsPlayer = ballVelocity:Dot(directionToPlayer) - playerVelocity:Dot(directionToPlayer)
- 
-        if velocityTowardsPlayer <= 0 then
-            return math.huge
-        end
- 
-        local distanceToBeCovered = distanceToPlayer - 40
-        return distanceToBeCovered / velocityTowardsPlayer
-    end
- 
-    local BASE_THRESHOLD = 0.15
-    local VELOCITY_SCALING_FACTOR = 0.002
- 
-    local function getDynamicThreshold(ballVelocityMagnitude)
-        local adjustedThreshold = BASE_THRESHOLD - (ballVelocityMagnitude * VELOCITY_SCALING_FACTOR)
-        return math.max(0.12, adjustedThreshold)
-    end
- 
-    local function checkBallDistance()
-        if not character:FindFirstChild("Highlight") then return end
-        local charPos = character.PrimaryPart.Position
-        local charVel = character.PrimaryPart.Velocity
- 
-        if focusedBall and not focusedBall.Parent then
-            chooseNewFocusedBall()
-        end
- 
-        if not focusedBall then return end
- 
-        local ball = focusedBall
-        local distanceToPlayer = (ball.Position - charPos).Magnitude
- 
-        if distanceToPlayer < 10 then
-            parryButtonPress:Fire()
-            return
-        end
- 
-        local timeToImpact = timeUntilImpact(ball.Velocity, distanceToPlayer, charVel)
-        local dynamicThreshold = getDynamicThreshold(ball.Velocity.Magnitude)
- 
-        if timeToImpact < dynamicThreshold then
-            parryButtonPress:Fire()
-        end
-    end
-    heartbeatConnection = game:GetService("RunService").Heartbeat:Connect(function()
-        checkBallDistance()
-    end
+getgenv().Mode = "AimOnly" -- "AimOnly","Rage", "AI" getgenv().ForceWin = false --100% Win Need Telekenis getgenv().AutoUseSkill = true getgenv().BaseVelocity = 4.4 --Base On The Server, IDK Where To Get it It Should Be 4-6 Or 0 (Old Server) getgenv().BasePredictVelocity = 4 -- Should be From 3-3.5 Work Good With 3 If Old Server getgenv().VisualizePath = true -- false // getgenv().AutoSpamClickDetect = true -- Spam Click If Near Other Player getgenv().CloseRangeAttack = true -- Just Move Forward To The Last Character getgenv().AutoGetVelocity = true -- Need The Ball To Be Stopped getgenv().AutoClickKeyBind = "X" -- Need The Ball To Be Stopped 
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua"))()
 end)
 
 KillingCheats:CreateToggle("AutoClick", function(state)
