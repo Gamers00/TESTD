@@ -147,14 +147,3 @@ local args = {
 wait(0.00000001)
 end
 end)
-
-local KillingCheats = PhantomForcesWindow:NewSection("Player")
-
-KillingCheats:CreateToggle("Speed", function(state)
-_G.speed = (state and true or false)
-wait()
-while _G.speed == true do
-wait()
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
-end
-end)
