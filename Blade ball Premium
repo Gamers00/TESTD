@@ -52,6 +52,7 @@ end)
 
 KillingCheats:CreateButton("AutoParry", function()
  lodstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/AutoBlock"))()
 end)
 
 KillingCheats:CreateToggle("AutoClick", function(state)
