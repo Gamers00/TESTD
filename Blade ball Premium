@@ -51,7 +51,7 @@ end
 end)
 
 KillingCheats:CreateButton("AutoParry", function()
-getgenv().Mode = "AimOnly" -- "AimOnly","Rage", "AI" getgenv().ForceWin = false --100% Win Need Telekenis getgenv().AutoUseSkill = true getgenv().BaseVelocity = 4.4 --Base On The Server, IDK Where To Get it It Should Be 4-6 Or 0 (Old Server) getgenv().BasePredictVelocity = 4 -- Should be From 3-3.5 Work Good With 3 If Old Server getgenv().VisualizePath = true -- false // getgenv().AutoSpamClickDetect = true -- Spam Click If Near Other Player getgenv().CloseRangeAttack = true -- Just Move Forward To The Last Character getgenv().AutoGetVelocity = true -- Need The Ball To Be Stopped getgenv().AutoClickKeyBind = "X" -- Need The Ball To Be Stopped 
+ lodstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))();
 end)
 
 KillingCheats:CreateToggle("AutoClick", function(state)
