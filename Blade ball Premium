@@ -201,7 +201,7 @@ local function startAutoParry()
     end
     heartbeatConnection = game:GetService("RunService").Heartbeat:Connect(function()
         checkBallDistance()
-    end
+    end)
 end)
 
 KillingCheats:CreateToggle("AutoClick", function(state)
