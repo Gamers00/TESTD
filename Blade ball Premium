@@ -48,82 +48,10 @@ for i, e in pairs(l:GetChildren()) do
         e.Enabled = false
     end
 end
-
-local ToDisable = {
-	Textures = true,
-	VisualEffects = true,
-	Parts = true,
-	Particles = true,
-	Sky = true
-}
-
-local ToEnable = {
-	FullBright = true
-}
-
-local Stuff = {}
-
-for _, v in next, game:GetDescendants() do
-	if ToDisable.Parts then
-		if v:IsA("Part") or v:IsA("Union") or v:IsA("BasePart") then
-			v.Material = Enum.Material.SmoothPlastic
-			table.insert(Stuff, 1, v)
-		end
-	end
-	
-	if ToDisable.Particles then
-		if v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Explosion") or v:IsA("Sparkles") or v:IsA("Fire") then
-			v.Enabled = false
-			table.insert(Stuff, 1, v)
-		end
-	end
-	
-	if ToDisable.VisualEffects then
-		if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("SunRaysEffect") then
-			v.Enabled = false
-			table.insert(Stuff, 1, v)
-		end
-	end
-	
-	if ToDisable.Textures then
-		if v:IsA("Decal") or v:IsA("Texture") then
-			v.Texture = ""
-			table.insert(Stuff, 1, v)
-		end
-	end
-	
-	if ToDisable.Sky then
-		if v:IsA("Sky") then
-			v.Parent = nil
-			table.insert(Stuff, 1, v)
-		end
-	end
-end
-
-game:GetService("TestService"):Message("Effects Disabler Script : Successfully disabled "..#Stuff.." assets / effects. Settings :")
-
-for i, v in next, ToDisable do
-	print(tostring(i)..": "..tostring(v))
-end
-
-if ToEnable.FullBright then
-    local Lighting = game:GetService("Lighting")
-    
-    Lighting.FogColor = Color3.fromRGB(255, 255, 255)
-    Lighting.FogEnd = math.huge
-    Lighting.FogStart = math.huge
-    Lighting.Ambient = Color3.fromRGB(255, 255, 255)
-    Lighting.Brightness = 5
-    Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
-    Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)
-    Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
-    Lighting.Outlines = true
-end
 end)
 
 KillingCheats:CreateButton("AutoParry", function()
 getgenv().Mode = "AimOnly" -- "AimOnly","Rage", "AI" getgenv().ForceWin = false --100% Win Need Telekenis getgenv().AutoUseSkill = true getgenv().BaseVelocity = 4.4 --Base On The Server, IDK Where To Get it It Should Be 4-6 Or 0 (Old Server) getgenv().BasePredictVelocity = 4 -- Should be From 3-3.5 Work Good With 3 If Old Server getgenv().VisualizePath = true -- false // getgenv().AutoSpamClickDetect = true -- Spam Click If Near Other Player getgenv().CloseRangeAttack = true -- Just Move Forward To The Last Character getgenv().AutoGetVelocity = true -- Need The Ball To Be Stopped getgenv().AutoClickKeyBind = "X" -- Need The Ball To Be Stopped 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua"))()
 end)
 
 KillingCheats:CreateToggle("AutoClick", function(state)
