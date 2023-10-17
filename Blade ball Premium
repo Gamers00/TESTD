@@ -4,14 +4,24 @@ game.StarterGui:SetCore("SendNotification", {
     Icon = "rbxassetid://12325317906";
 })
 
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local PhantomForcesWindow = Library:NewWindow("Gamers Hub (PREMIUM)")
+local Window = OrionLib:MakeWindow({Name = "Gamers Hub God", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local KillingCheats = PhantomForcesWindow:NewSection("Blade ball")
+local Tab = Window:MakeTab({
+	Name = "Blade ball",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
-KillingCheats:CreateButton("Low Graphics Premium", function()
-local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+
+Tab:AddButton({
+	Name = "Low Graphics",
+	Callback = function()
+      		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 local g = game
 local w = g.Workspace
 local l = g.Lighting
@@ -48,15 +58,21 @@ for i, e in pairs(l:GetChildren()) do
         e.Enabled = false
     end
 end
-end)
+  	end    
+})
 
-KillingCheats:CreateButton("AutoParry", function()
- lodstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))();
-loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/AutoBlock"))()
-end)
+Tab:AddButton({
+	Name = "AutoParry",
+	Callback = function()
+      		print('Not Working!')
+  	end    
+})
 
-KillingCheats:CreateToggle("AutoClick", function(state)
-_G.getServerTimeRemote = (state and true or false)
+Tab:AddToggle({
+	Name = "AutoClicker",
+	Default = false,
+	Callback = function(state)
+		_G.getServerTimeRemote = (state and true or false)
 _G.rebirthRequest = (state and true or false)
 wait()
 while _G.rebirthRequest == true do
@@ -75,4 +91,5 @@ local args = {
       game:GetService("ReplicatedStorage").Remotes.ParryAttempt:FireServer(unpack(args))
 wait(0.00000001)
 end
-end)
+	end    
+})
