@@ -19,7 +19,7 @@ Tab:AddButton({
   	end    
 })
 
-while true do
+while wait() do
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local replicatedStorage = game:GetService("ReplicatedStorage")
@@ -102,5 +102,5 @@ end
 runService.Heartbeat:Connect(function()
     checkBallDistance()
 end)
-wait(0.000000001)
+wait(0.000001)
 end
