@@ -24,5 +24,11 @@ game.StarterGui:SetCore("SendNotification", {
 
 while true do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gamers00/Auto/main/Auto"))();
 wait(0.00001)
 end
