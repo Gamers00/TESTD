@@ -1,9 +1,9 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "gamers hub gg", HidePremium = false, IntroText = "Made by Gamers", SaveConfig = true, ConfigFolder = "Blade Ball"})
+local Window = OrionLib:MakeWindow({Name = "Gamers Hub Gg", HidePremium = false, IntroText = "Made by Gamers", SaveConfig = true, ConfigFolder = "Blade Ball"})
 
 local Tab = Window:MakeTab({
-	Name = "main",
+	Name = " ",
 	Icon = "",
 	PremiumOnly = false
 })
@@ -13,9 +13,9 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "click this then type /console in chat!",
+	Name = "freeze ball",
 	Callback = function()
-      		print('autoparry working!')
+      		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
   	end    
 })
 
