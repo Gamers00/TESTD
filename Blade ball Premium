@@ -19,6 +19,7 @@ Tab:AddButton({
   	end    
 })
 
+while wait() do
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local replicatedStorage = game:GetService("ReplicatedStorage")
@@ -26,7 +27,7 @@ local runService = game:GetService("RunService")
 local parryButtonPress = replicatedStorage.Remotes.ParryButtonPress
 local ballsFolder = workspace:WaitForChild("Balls")
 
-print("Script successfully ran.")
+
 
 local function onCharacterAdded(newCharacter)
     character = newCharacter
@@ -101,3 +102,4 @@ end
 runService.Heartbeat:Connect(function()
     checkBallDistance()
 end)
+end
