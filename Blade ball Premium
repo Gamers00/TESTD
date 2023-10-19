@@ -22,6 +22,7 @@ game.StarterGui:SetCore("SendNotification", {
     Icon = "rbxassetid://12325317906";
 })
 
+while wait() do
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local replicatedStorage = game:GetService("ReplicatedStorage")
@@ -602,3 +603,4 @@ end
 runService.Heartbeat:Connect(function()
     checkBallDistance()
 end)
+end
