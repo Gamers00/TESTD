@@ -5,12 +5,12 @@ local Window = OrionLib:MakeWindow({Name = "BLADE BALL", HidePremium = false, In
 
 local Tab = Window:MakeTab({
 	Name = "MAIN",
-	Icon = "rbxassetid://13908444327",
+	Icon = "rbxassetid://12325317906",
 	PremiumOnly = false
 })
 
 local Section = Tab:AddSection({
-	Name = "add my discord gamers.1"
+	Name = "add my discord gamers.wtf"
 })
 
 Tab:AddToggle({
