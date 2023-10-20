@@ -612,3 +612,19 @@ Tab:AddButton({
       		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
   	end    
 })
+
+Tab:AddButton({
+	Name = "farm",
+	Callback = function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart
+CFrame = CFrame.new(-218, 95, -72)
+  	end    
+})
+Tab:AddButton({
+	Name = "speed",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+  	end    
+})
+
+
