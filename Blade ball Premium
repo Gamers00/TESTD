@@ -1,7 +1,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "BLADE BALL", HidePremium = false, IntroText = "MADE BY ICY", SaveConfig = true, ConfigFolder = "Blade Ball"})
+local Window = OrionLib:MakeWindow({Name = "BLADE BALL", HidePremium = false, IntroText = "MADE BY GAMERS!", SaveConfig = true, ConfigFolder = "Blade Ball"})
 
 local Tab = Window:MakeTab({
 	Name = "MAIN",
@@ -13,20 +13,14 @@ local Section = Tab:AddSection({
 	Name = "add my discord gamers.1"
 })
 
-Tab:AddButton({
-	Name = "click this then type /console in chat!",
-	Callback = function()
-      		print("SUB TO MY Y.T CHANNEL Gamers.01")
-  	end    
-})
-
-Tab:AddButton({
-	Name = "freeze ball",
-	Callback = function()
-      		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
-  	end    
-})
-
+Tab:AddToggle({
+	Name = "autoparry",
+	Default = false,
+	Callback = function(state)
+		_G.auto = (state and true or false)
+wait()
+while _G.auto == true do
+wait()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local replicatedStorage = game:GetService("ReplicatedStorage")
@@ -109,3 +103,14 @@ end
 runService.Heartbeat:Connect(function()
     checkBallDistance()
 end)
+wait(0.001)
+end
+	end    
+})
+
+Tab:AddButton({
+	Name = "freeze ball",
+	Callback = function()
+      		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
+  	end    
+})
