@@ -634,3 +634,13 @@ end)
 KillingCheats:CreateTextbox("Speed", function(text)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = text
 end)
+
+KillingCheats:CreateToggle("Auto Farm", function(state)
+_G.slm = (state and true or false)
+wait()
+while _G.slm == true do
+wait()
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DamageIncreaseOnClickEvent"):FireServer()
+wait(0.0001)
+end
+end)
