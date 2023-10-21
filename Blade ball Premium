@@ -1,26 +1,24 @@
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "BLADE BALL", HidePremium = false, IntroText = "MADE BY GAMERS!", SaveConfig = true, ConfigFolder = "Blade Ball"})
-
-local Tab = Window:MakeTab({
-	Name = "MAIN",
-	Icon = "rbxassetid://12325317906",
-	PremiumOnly = false
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Welcome";
+    Text = "Script Made by Gamers!";
+    Icon = "rbxassetid://12325317906";
 })
 
-local Section = Tab:AddSection({
-	Name = "add my discord gamers.wtf"
-})
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
-Tab:AddToggle({
-	Name = "autoparry",
-	Default = false,
-	Callback = function(state)
-		_G.auto = (state and true or false)
+local PhantomForcesWindow = Library:NewWindow("BLADE BALL")
+
+local KillingCheats = PhantomForcesWindow:NewSection(" ")
+
+KillingCheats:CreateToggle("Auto Parry", function(state)
+_G.slamajaja = (state and true or false)
 wait()
-while _G.auto == true do
+while _G.slamajaja == true do
 wait()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Script Made by Gamers!";
+    Text = "";
+})
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local replicatedStorage = game:GetService("ReplicatedStorage")
@@ -603,12 +601,12 @@ runService.Heartbeat:Connect(function()
 end)
 wait(0.001)
 end
-	end    
-})
+end)
 
-Tab:AddButton({
-	Name = "freeze ball",
-	Callback = function()
-      		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
-  	end    
-})
+KillingCheats:CreateButton("Freeze Ball", function()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
+end)
+
+KillingCheats:CreateTextbox("Speed", function(text)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = text
+end)
