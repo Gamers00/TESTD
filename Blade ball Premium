@@ -607,8 +607,13 @@ KillingCheats:CreateButton("Freeze Ball", function()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
 end)
 
-KillingCheats:CreateButton("Farm", function()
+KillingCheats:CreateToggle("Auto Farm", function(state)
+_G.slam = (state and true or false)
+wait()
+while _G.slam == true do
+wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+end
 end)
 
 KillingCheats:CreateTextbox("Speed", function(text)
