@@ -607,6 +607,10 @@ KillingCheats:CreateButton("Freeze Ball", function()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
 end)
 
+KillingCheats:CreateButton("Farm", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+end)
+
 KillingCheats:CreateTextbox("Speed", function(text)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = text
 end)
