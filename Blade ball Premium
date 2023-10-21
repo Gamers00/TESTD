@@ -613,6 +613,21 @@ wait()
 while _G.slam == true do
 wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-278, 95, -72)
+wait(0.001)
 end
 end)
 
