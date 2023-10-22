@@ -4,6 +4,8 @@ game.StarterGui:SetCore("SendNotification", {
     Icon = "rbxassetid://12325317906";
 })
 
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/marcola1212/UnderGroundV3-Hub/main/Version0.03"),true))()
+
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local replicatedStorage = game:GetService("ReplicatedStorage")
