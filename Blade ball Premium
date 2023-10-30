@@ -2,16 +2,6 @@ game.StarterGui:SetCore("SendNotification", {
     Title = "Welcome";
     Text = "Script Made by Gamers!";
 })
-wait(1)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "Gamers hub", HidePremium = false, IntroText = "Made by Gamers", SaveConfig = true, ConfigFolder = "OrionTest"})
-
-local Tab = Window:MakeTab({
-	Name = "All",
-	Icon = "",
-	PremiumOnly = false
-})
 
 local fov = 40
 local maxDistance = 400
