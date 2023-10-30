@@ -23,7 +23,7 @@ game.StarterGui:SetCore("SendNotification", {
 
 local UIS = game:GetService("UserInputService")
 
-UIS.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Keyboard then if input.KeyCode == Enum.KeyCode.N then SCRIPT HERE end end end)
+UIS.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Keyboard then if input.KeyCode == Enum.KeyCode.N then loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))() end end end)
 
 local UIS = game:GetService("UserInputService")
 
