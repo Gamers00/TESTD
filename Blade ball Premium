@@ -1,6 +1,34 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome";
-    Text = "Script Made by Gamers!";
+    Title = " Script Made by Gamers!";
+    Text = "discord Gamers.wtf";
+})
+game.StarterGui:SetCore("SendNotification", {
+    Title = " "E" to Aimbot";
+    Text = "";
 })
 
-loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fov-aimbot-mobile-7677"))()
+game.StarterGui:SetCore("SendNotification", {
+    Title = " "P" to Quest";
+    Text = "";
+})
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = " "N" to Script";
+    Text = "";
+})
+
+
+
+
+
+local UIS = game:GetService("UserInputService")
+
+UIS.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Keyboard then if input.KeyCode == Enum.KeyCode.N then SCRIPT HERE end end end)
+
+local UIS = game:GetService("UserInputService")
+
+UIS.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Keyboard then if input.KeyCode == Enum.KeyCode.P then ("SCRIPT QUEST HERE") end end end)
+
+local UIS = game:GetService("UserInputService")
+
+UIS.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Keyboard then if input.KeyCode == Enum.KeyCode.E then loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fov-aimbot-mobile-7677"))() end end end)
