@@ -3,6 +3,12 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "discord Gamers.wtf";
 })
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))()
+local args = {
+    [1] = "Input",
+    [2] = "Action",
+    [3] = false
+}
 
-loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fov-aimbot-mobile-7677"))()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer("Input","Action",false")
