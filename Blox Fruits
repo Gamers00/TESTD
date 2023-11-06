@@ -25,7 +25,7 @@ Tab:AddButton({
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))() local PhantomForcesWindow = Library:NewWindow("Blox fruits") local KillingCheats = PhantomForcesWindow:NewSection("Main")
 
 KillingCheats:CreateButton("Max Health", function()
-    local Health = 12000
+    local Health = 13000
     game.Players.LocalPlayer.Character.Humanoid.Health = Health
 end)
   	end    
@@ -50,9 +50,9 @@ local UIS = game:GetService("UserInputService")
 UIS.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.Keyboard then
     if input.KeyCode == Enum.KeyCode.M then
-    local Health = 12000
+    local Health = 13000
     
-    game.Players.LocalPlayer.Character.Humanoid.Health = 12000
+    game.Players.LocalPlayer.Character.Humanoid.Health = Health
     end
 
 end
