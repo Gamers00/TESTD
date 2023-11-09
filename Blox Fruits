@@ -1,62 +1,20 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Welcome";
-    Text = "Please Select";
-})
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "???", HidePremium = false, IntroText = "Made by Gamers" , SaveConfig = true, ConfigFolder = "OrionTest"})
-
-local Tab = Window:MakeTab({
-	Name = "???",
-	Icon = "rbxassetid://14981795816",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-	Name = "Mobile",
-	Callback = function()
-      		game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome";
     Text = "Script Made by Gamers!";
     Icon = "rbxassetid://14981795816"
 })
 
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))() local PhantomForcesWindow = Library:NewWindow("Blox fruits") local KillingCheats = PhantomForcesWindow:NewSection("Main")
-
-KillingCheats:CreateButton("Max Health", function()
-    local Health = 13000
-    game.Players.LocalPlayer.Character.Humanoid.Health = Health
-end)
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Pc",
-	Callback = function()
-      		game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome";
-    Text = "Script Made by Gamers!";
-    Icon = "rbxassetid://14981795816"
-})
-wait(1)
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Warning";
-    Text = "Press M to Max Health!";
-})
-wait(1)
-local UIS = game:GetService("UserInputService")
-
-UIS.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Keyboard then
-    if input.KeyCode == Enum.KeyCode.M then
-    local Health = 13000
-    
-    game.Players.LocalPlayer.Character.Humanoid.Health = Health
-    end
-
+while wait() do
+game. Workspace.ChildAdded:connect(function(newPlayer)
+if (game.Players:GetPlayer FromCharacter(newPlayer)) then
+newPlayer.Humanoid.MaxHealth = math.huge 
+newPlayer Humanoid.Health = math.huge
 end
-
 end)
-  	end    
-})
+
+game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
+game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
+
+game.Players.LocalPlayer.Character.Humanoid.Health = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+end
