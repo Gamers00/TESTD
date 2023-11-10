@@ -4,17 +4,8 @@ game.StarterGui:SetCore("SendNotification", {
     Icon = "rbxassetid://14981795816"
 })
 
-while wait() do
-game. Workspace.ChildAdded:connect(function(newPlayer)
-if (game.Players:GetPlayer FromCharacter(newPlayer)) then
-newPlayer.Humanoid.MaxHealth = math.huge 
-newPlayer Humanoid.Health = math.huge
-end
-end)
-
-game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
+while true do
 game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
-
-game.Players.LocalPlayer.Character.Humanoid.Health = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
-game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
+wait(0.0001)
 end
