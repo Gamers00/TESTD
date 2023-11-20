@@ -6,12 +6,6 @@ game.StarterGui:SetCore("SendNotification", {
 
 wait(1)
 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Onichan";
-    Text = ":3";
-    Icon = "rbxassetid://10341849875"
-})
-
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local PhantomForcesWindow = Library:NewWindow("Gamers Hub")
@@ -24,33 +18,8 @@ end)
 
 local KillingCheats = PhantomForcesWindow:NewSection("Main")
 
-KillingCheats:CreateButton("AutoClicker", function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome";
-    Text = "Script Made by Gamers!";
-})
+     local mouse = game.Players.LocalPlayer:GetMouse()
 
-while wait() do
-local range = 99e9
-
-local player = game:GetService("Players").LocalPlayer
-
-game:GetService("RunService").RenderStepped:Connect(function()
-    local p = game.Players:GetPlayers()
-    for i = 2, #p do local v = p[i].Character
-        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
-            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
-            if tool and tool:FindFirstChild("Handle") then
-                tool:Activate()
-                for i,v in next, v:GetChildren() do
-                    if v:IsA("BasePart") then
-                        firetouchinterest(tool.Handle,v,0)
-                        firetouchinterest(tool.Handle,v,1)
-                    end
-                end
-            end
-        end
-    end
-end)
-end
-end)
+     mouse.Move:Connect(function()
+         print("X: " .. mouse.X .. ", Y: " .. mouse.Y)
+     end)
