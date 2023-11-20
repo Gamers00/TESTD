@@ -6,20 +6,24 @@ game.StarterGui:SetCore("SendNotification", {
 
 wait(1)
 
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local UserInputService = game:GetService("UserInputService")
 
-local PhantomForcesWindow = Library:NewWindow("Gamers Hub")
+-- Função para simular cliques automáticos em coordenadas aleatórias
+local function clicarAutomatico()
+    while true do
+        wait(1)  -- Intervalo entre cliques (ajuste conforme necessário)
+        
+        -- Gera coordenadas aleatórias dentro da área da tela do jogador
+        local screenSize = game.Players.LocalPlayer.PlayerGui.AbsoluteSize
+        local randomPosition = Vector2.new(math.random(0, screenSize.X), math.random(0, screenSize.Y))
 
-local KillingCheats = PhantomForcesWindow:NewSection("General")
+        -- Simula um clique na posição aleatória
+        UserInputService.InputBegan:FireClient(game.Players.LocalPlayer, {
+            UserInputType = Enum.UserInputType.MouseButton1,
+            Position = randomPosition
+        })
+    end
+end
 
-KillingCheats:CreateButton("Owner: Gamers", function()
-print("?")
-end)
-
-local KillingCheats = PhantomForcesWindow:NewSection("Main")
-
-     local mouse = game.Players.LocalPlayer:GetMouse()
-
-     mouse.Move:Connect(function()
-         print("X: " .. mouse.X .. ", Y: " .. mouse.Y)
-     end)
+-- Inicia a função clicarAutomatico em uma nova thread
+coroutine.wrap(clicarAutomatico)()
