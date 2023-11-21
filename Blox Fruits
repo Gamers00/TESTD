@@ -1,29 +1,24 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome";
-    Text = "Script Made by Gamers!";
-    Icon = "rbxassetid://14981795816"
-})
+-- Coloque este script em um objeto no Roblox, como um "Script" em um "Part"
 
-wait(1)
-
-local UserInputService = game:GetService("UserInputService")
-
--- Função para simular cliques automáticos em coordenadas aleatórias
-local function clicarAutomatico()
-    while true do
-        wait(1)  -- Intervalo entre cliques (ajuste conforme necessário)
-        
-        -- Gera coordenadas aleatórias dentro da área da tela do jogador
-        local screenSize = game.Players.LocalPlayer.PlayerGui.AbsoluteSize
-        local randomPosition = Vector2.new(math.random(0, screenSize.X), math.random(0, screenSize.Y))
-
-        -- Simula um clique na posição aleatória
-        UserInputService.InputBegan:FireClient(game.Players.LocalPlayer, {
-            UserInputType = Enum.UserInputType.MouseButton1,
-            Position = randomPosition
-        })
-    end
+-- Função para dar vida infinita a um jogador
+local function darVidaInfinita(player)
+    local humanoid = player.Character:WaitForChild("Humanoid")
+    
+    -- Defina a propriedade MaxHealth para um valor muito alto
+    humanoid.MaxHealth = math.huge
+    
+    -- Defina a propriedade Health para o valor máximo
+    humanoid.Health = humanoid.MaxHealth
 end
 
--- Inicia a função clicarAutomatico em uma nova thread
-coroutine.wrap(clicarAutomatico)()
+-- Conecte a função a um evento que ocorre quando um jogador entra no jogo
+game.Players.PlayerAdded:Connect(function(player)
+    -- Conceda vida infinita ao jogador quando ele entra no jogo
+    darVidaInfinita(player)
+    
+    -- Conecte a função a um evento que ocorre quando o personagem do jogador é adicionado ao jogo
+    player.CharacterAdded:Connect(function(character)
+        -- Conceda vida infinita ao jogador quando seu personagem é adicionado ou respawnado
+        darVidaInfinita(player)
+    end)
+end)
